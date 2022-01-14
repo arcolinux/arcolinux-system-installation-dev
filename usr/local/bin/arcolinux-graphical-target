@@ -20,8 +20,8 @@ get_driver(){
 while [ -e "/var/lib/pacman/db.lck" ];
 do
     echo 'Pacman is not ready yet. Will try again in 10 seconds.'
-    seconds=$(($seconds + 10))
-    sleep 10
+    seconds=$(($seconds + 5))
+    sleep 5
     if [[ "$seconds" == "30" ]]; then
         echo 'Warning: removing pacman db.lck!'
         rm /var/lib/pacman/db.lck
