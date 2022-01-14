@@ -1,6 +1,6 @@
 [Unit]
 Description=checks if installed on virtual machine or not
-Before=multi-user.target display-manager.service
+Before=systemd-user-sessions.service
 
 [Service]
 Type=oneshot
