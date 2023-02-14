@@ -13,9 +13,11 @@ pacman-key --populate arcolinux
 pacman-key --populate chaotic
 echo
 echo "#################################"
-echo "Copy grub Vimix theme (archiso deletes /boot when making the ISO)"
+echo "Copy gpg.conf to /etc/pacman.d/gnupg"
 echo "#################################"
-cp /usr/local/share/arcolinux/gpg.conf /etc/pacman.d/gnupg/
+
+cp -f /usr/local/share/arcolinux/installation/gpg.conf /etc/pacman.d/gnupg/
+
 echo
 echo "#################################"
 echo "Copy grub Vimix theme (archiso deletes /boot when making the ISO)"
