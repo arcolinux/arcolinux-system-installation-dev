@@ -61,10 +61,12 @@ if [ -f /tmp/systemd-boot ]; then
 	echo "#################################"
 	pacman -R --noconfirm grub-customizer
 	pacman -R --noconfirm grub
+	pacman -R --noconfirm arcolinux-grub-theme-vimix-git
 	rm -r /etc/grub.d
 	rm /etc/default/grub
 	rm /etc/default/grub.pacsave
 	rm -r /boot/grub
+
 fi
 
 echo "#################################"
