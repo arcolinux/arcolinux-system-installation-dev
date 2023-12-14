@@ -55,6 +55,18 @@ mv /etc/arcolinux-release /etc/lsb-release
 #echo "#################################"
 #hardcode-fixer
 
+if [ -f /tmp/systemd-boot ]; then
+	echo "#################################"
+	echo "Removing any leftovers for grub boot"
+	echo "#################################"
+	pacman -R --noconfirm grub-customizer
+	pacman -R --noconfirm grub
+	rm -r /etc/grub.d
+	rm /etc/default/grub
+	rm /etc/default/grub.pacsave
+	rm -r /boot/grub
+fi
+
 echo "#################################"
 echo "mkinitcpio - sd-vconsole"
 echo "#################################"
