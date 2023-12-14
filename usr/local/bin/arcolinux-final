@@ -67,6 +67,7 @@ if [ -f /tmp/systemd-boot ]; then
 	rm /etc/default/grub.pacsave
 	rm -r /boot/grub
 	rm /etc/pacman.d/hooks/kernel-linux.hook
+	pacman -U --noconfirm /usr/local/bin/kernel-install-mkinitcpio-*-any.pkg.tar.zst
 fi
 
 echo "#################################"
