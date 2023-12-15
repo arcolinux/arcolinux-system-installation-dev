@@ -11,8 +11,8 @@ pacman-key --init
 pacman-key --populate archlinux
 pacman-key --populate arcolinux
 pacman-key --populate chaotic
-echo
-touch /tmp/systemd-boot
+#echo
+#touch /tmp/systemd-boot
 
 if [ ! -f /tmp/systemd-boot ]; then
 	echo "#################################"
