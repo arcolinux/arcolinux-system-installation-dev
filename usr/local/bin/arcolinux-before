@@ -13,7 +13,9 @@ pacman-key --populate arcolinux
 pacman-key --populate chaotic
 echo
 
-if [  -f ${ROOT}/tmp/grubselected ]; then
+
+echo "Grub Vimix"
+if [  -f /tmp/grubselected ]; then
 	echo "#################################"
 	echo "Copy grub Vimix theme (archiso deletes /boot when making the ISO)"
 	echo "#################################"
@@ -21,7 +23,8 @@ if [  -f ${ROOT}/tmp/grubselected ]; then
 	cp -Rf /usr/share/grub/themes/Vimix /boot/grub/themes/
 fi
 
-if [ -f ${ROOT}/tmp/refindselected ]; then
+echo "Refind arco theme"
+if [ -f /tmp/refindselected ]; then
 	echo "#################################"
 	echo "Copy refind theme (archiso deletes /boot when making the ISO)"
 	echo "#################################"
