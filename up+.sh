@@ -56,7 +56,7 @@ echo
 echo "Copied"
 echo
 cp -v /home/erik/ARCO/ARCOLINUX-REPO/arcolinux_repo/x86_64/arcolinux-refind-theme-arco*pkg.tar.zst $workdir/usr/local/bin
-
+echo
 
 # Below command will backup everything inside the project folder
 git add --all .
