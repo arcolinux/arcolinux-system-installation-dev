@@ -50,12 +50,15 @@ echo "Install our theme if refind was choosen"
 if [ -f /boot/efi/EFI/refind/refind.conf ]; then
 	echo "installing arcolinux-refind-theme-arco"
 	pacman -U --noconfirm /usr/local/bin/arcolinux-refind-theme-arco-*-any.pkg.tar.zst
+	pacman -R --noconfirm arcolinux-grub-theme-vimix-git
 fi
+echo "End installing our theme if refind was choosen"
 
 echo "Install kernel-install-mkinitcpio"
 if [ -f /boot/efi/loader/loader.conf ]; then
 	echo "installing kernel-install-mkinitcpio"
 	pacman -U --noconfirm /usr/local/bin/kernel-install-mkinitcpio-*-any.pkg.tar.zst
+	pacman -R --noconfirm arcolinux-grub-theme-vimix-git
 fi
 echo "End installation kernel-install-mkinitcpio"
 
