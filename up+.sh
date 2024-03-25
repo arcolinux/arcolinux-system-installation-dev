@@ -47,6 +47,8 @@ echo "Copied"
 echo
 cp -v /home/erik/ARCO/ARCOLINUX-REPO/arcolinux_repo_3party/x86_64/kernel-install-mkinitcpio*pkg.tar.zst $workdir/usr/local/bin
 echo
+
+
 echo "getting arcolinux-refind-theme-arco"
 echo
 echo "Removed"
@@ -56,6 +58,32 @@ echo
 echo "Copied"
 echo
 cp -v /home/erik/ARCO/ARCOLINUX-REPO/arcolinux_repo/x86_64/arcolinux-refind-theme-arco*pkg.tar.zst $workdir/usr/local/bin
+echo
+
+
+echo
+echo "getting arcolinux-bootloader-refind"
+echo
+echo "Removed"
+echo
+rm -v $workdir/usr/local/bin/arcolinux-bootloader-refind*pkg.tar.zst
+echo
+echo "Copied"
+echo
+cp -v /home/erik/ARCO/ARCOLINUX-REPO/arcolinux_repo/x86_64/arcolinux-bootloader-refind*pkg.tar.zst $workdir/usr/local/bin
+echo
+
+
+echo
+echo "getting arcolinux-bootloader-systemd-boot"
+echo
+echo "Removed"
+echo
+rm -v $workdir/usr/local/bin/arcolinux-systemd-boot*pkg.tar.zst
+echo
+echo "Copied"
+echo
+cp -v /home/erik/ARCO/ARCOLINUX-REPO/arcolinux_repo/x86_64/arcolinux-bootloader-systemd-boot*pkg.tar.zst $workdir/usr/local/bin
 echo
 
 # Below command will backup everything inside the project folder
