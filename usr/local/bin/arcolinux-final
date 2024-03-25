@@ -46,9 +46,10 @@ mv -v /etc/arcolinux-release /etc/lsb-release
 # Do not do here - extra /home/root folder
 #hardcode-fixer
 
-echo "Add our theme if refind was choosen"
+echo "Install our theme if refind was choosen"
 if [ -f /boot/efi/EFI/refind/refind.conf ]; then
-echo 'include themes/arco-refind/theme.conf' | sudo tee --append /boot/efi/EFI/refind/refind.conf
+	echo "installing arcolinux-refind-theme-arco"
+	pacman -U --noconfirm /usr/local/bin/arcolinux-refind-theme-arco-*-any.pkg.tar.zst
 fi
 
 echo "Install kernel-install-mkinitcpio"
