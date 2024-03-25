@@ -79,7 +79,7 @@ echo "getting arcolinux-bootloader-systemd-boot"
 echo
 echo "Removed"
 echo
-rm -v $workdir/usr/local/bin/arcolinux-systemd-boot*pkg.tar.zst
+rm -v $workdir/usr/local/bin/arcolinux-bootloader-systemd-boot*pkg.tar.zst
 echo
 echo "Copied"
 echo
