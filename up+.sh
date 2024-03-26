@@ -86,6 +86,19 @@ echo
 cp -v /home/erik/ARCO/ARCOLINUX-REPO/arcolinux_repo/x86_64/arcolinux-bootloader-systemd-boot*pkg.tar.zst $workdir/usr/local/bin
 echo
 
+
+echo
+echo "getting pacman-hook-kernel-install"
+echo
+echo "Removed"
+echo
+rm -v $workdir/usr/local/bin/pacman-hook-kernel-install*pkg.tar.zst
+echo
+echo "Copied"
+echo
+cp -v /home/erik/ARCO/ARCOLINUX-REPO/arcolinux_repo_3party/x86_64/pacman-hook-kernel-install*pkg.tar.zst $workdir/usr/local/bin
+echo
+
 # Below command will backup everything inside the project folder
 git add --all .
 
