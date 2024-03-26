@@ -57,6 +57,7 @@ if [ -f /boot/efi/EFI/refind/refind.conf ]; then
 	pacman -R --noconfirm arcolinux-bootloader-grub-git
 	
 	rm -r /boot/grub
+	rm -r /etc/default/grub
 fi
 echo "End installing refind packages"
 
@@ -72,6 +73,7 @@ if [ -f /boot/efi/loader/loader.conf ]; then
 	pacman -R --noconfirm arcolinux-bootloader-grub-git
 
 	rm -r /boot/grub
+	rm -r /etc/default/grub
 fi
 echo "End installation systemd-boot packages"
 
