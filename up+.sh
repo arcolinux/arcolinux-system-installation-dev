@@ -36,17 +36,17 @@ workdir=$(pwd)
 echo "Checking for newer files online first"
 git pull
 
-echo
-echo "getting kernel-install-mkinitcpio"
-echo
-echo "Removed"
-echo
-rm -v $workdir/usr/local/bin/kernel-install-mkinitcpio*pkg.tar.zst
-echo
-echo "Copied"
-echo
-cp -v /home/erik/ARCO/ARCOLINUX-REPO/arcolinux_repo_3party/x86_64/kernel-install-mkinitcpio*pkg.tar.zst $workdir/usr/local/bin
-echo
+# echo
+# echo "getting kernel-install-mkinitcpio"
+# echo
+# echo "Removed"
+# echo
+# rm -v $workdir/usr/local/bin/kernel-install-mkinitcpio*pkg.tar.zst
+# echo
+# echo "Copied"
+# echo
+# cp -v /home/erik/ARCO/ARCOLINUX-REPO/arcolinux_repo_3party/x86_64/kernel-install-mkinitcpio*pkg.tar.zst $workdir/usr/local/bin
+# echo
 
 
 echo "getting arcolinux-refind-theme-arco"
