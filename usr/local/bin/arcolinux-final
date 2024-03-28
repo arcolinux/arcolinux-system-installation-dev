@@ -85,12 +85,6 @@ echo "Permission of root set to 700"
 echo "#################################"
 chmod -v 700 /root
 
-echo "#################################"
-echo "ArcoLinux virtual machine check"
-echo "#################################"
-
-/usr/local/bin/arcolinux-virtual-machine-check
-
 echo
 echo "#################################"
 echo "End arcolinux-final"

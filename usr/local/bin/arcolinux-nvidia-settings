@@ -101,6 +101,7 @@ if pacman -Qi nvidia-dkms &> /dev/null; then
 	mkinitcpio -P
 
 	if [ -f /etc/default/grub ]; then
+		grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArcoLinux
 		grub-mkconfig -o /boot/grub/grub.cfg
 	fi
 
