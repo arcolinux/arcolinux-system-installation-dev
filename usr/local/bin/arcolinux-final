@@ -74,7 +74,6 @@ if [ -f /boot/efi/loader/loader.conf ]; then
 	rm /etc/default/grub
 
 	echo "installing systemd-boot packages"
-	#pacman -U --noconfirm /usr/local/bin/kernel-install-mkinitcpio*pkg.tar.zst
 	pacman -U --noconfirm /usr/local/bin/pacman-hook-kernel-install*pkg.tar.zst
 	pacman -U --noconfirm /usr/local/bin/arcolinux-bootloader-systemd-boot-git*pkg.tar.zst
 
