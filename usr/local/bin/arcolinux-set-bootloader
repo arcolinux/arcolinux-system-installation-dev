@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "######################################################"
-echo "Begin arcolinux-bootloader"
+echo "Begin arcolinux-set-bootloader"
 echo "######################################################"
 
 echo "installing refind packages"
@@ -45,6 +45,6 @@ chmod -v 700 /root
 
 echo
 echo "#################################"
-echo "End arcolinux-bootloader"
+echo "End arcolinux-set-bootloader"
 echo "#################################"
 echo
