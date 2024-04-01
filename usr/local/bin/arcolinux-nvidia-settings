@@ -76,6 +76,61 @@ if pacman -Qi nvidia-dkms &> /dev/null; then
 	echo
 fi
 
+################ SYSTEMD-BOOT
+# Just checking if nvidia-dkms is installed else stop
+if pacman -Qi nvidia-dkms &> /dev/null; then
+
+	echo
+	echo "################################################################"
+	echo "###### Making sure nvidia-dkms is installed or else do nothing"
+	echo "################################################################"
+	echo
+
+	echo "################################################################"
+	echo "#########  Checking ..."$package" is installed... we can continue"
+	echo "################################################################"
+
+	echo
+	echo "################################################################"
+	echo "################### Adding option nvidia-drm.modeset=1"
+	echo "################################################################"
+	echo
+
+	ENTRY_DIR="/boot/efi/loader/entries/"
+	PARAM="nvidia-drm.modeset=1"
+
+	for entry in "$ENTRY_DIR"*.conf; do
+  	if grep -q "nvidia-drm.modeset=1" "$entry"; then
+    	echo "Parameter already present in $(basename "$entry")"
+  	else
+    	sed -i "/^options / s/options /&$PARAM /" "$entry"
+    	echo "Added parameter to $(basename "$entry")"
+  	fi
+	done
+
+	echo
+	echo "################################################################"
+	echo "################### Mkinitcpio and update-grub"
+	echo "################################################################"
+	echo
+
+	mkinitcpio -P
+
+	if [ -f /etc/default/grub ];then
+		grub-mkconfig -o /boot/grub/grub.cfg
+	fi
+
+	echo
+	tput setaf 6
+	echo "################################################################"
+	echo "################### Done"
+	echo "################################################################"
+	tput sgr0
+	echo
+fi
+
+
+
 echo
 echo "#################################"
 echo "End arcolinux-nvidia-settings"
