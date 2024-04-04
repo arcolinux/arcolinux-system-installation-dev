@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+echo
+echo "#################################"
+echo "Start arcopro-remove-xfce"
+echo "#################################"
+echo
+pacman -Rns --noconfirm  xfce4 arconet-xfce
+echo
+echo "#################################"
+echo "End arcopro-remove-xfce"
+echo "#################################"
+echo
