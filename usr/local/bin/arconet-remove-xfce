@@ -6,8 +6,8 @@ echo "#################################"
 echo "Start arconet-remove-xfce"
 echo "#################################"
 echo
-systemctl disable sddm
-pacman -Rns --noconfirm  sddm
+#systemctl disable sddm
+#pacman -Rns --noconfirm  sddm
 pacman -Rns --noconfirm mugshot menulibre catfish xfce4 xfce4-goodies arconet-xfce arcolinux-faces-git arcolinux-xfce-panel-profiles-git
 echo
 echo "#################################"
