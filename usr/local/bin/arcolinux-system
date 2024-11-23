@@ -49,7 +49,9 @@ echo
 echo "#################################"
 echo "Copy /etc/skel to /root"
 echo "#################################"
-cp -aT /etc/skel/ /root/ || handle_error "Failed to copy /skel to /root"
+SKEL_DIR="/etc/skel"
+ROOT_DIR="/root"
+cp -aT "$SKEL_DIR/" "$ROOT_DIR/" || handle_error "Failed to copy skel to root."
 echo
 echo "#################################"
 echo "Cleanup autologin root"
@@ -60,12 +62,13 @@ echo
 echo "#################################"
 echo "Setting editor to nano"
 echo "#################################"
-echo "EDITOR=nano" >> /etc/profile
+grep -qxF 'EDITOR=nano' /etc/profile || echo "EDITOR=nano" >> /etc/profile
 echo
 echo "#################################"
 echo "Bluetooth improvements"
 echo "#################################"
-sed -i "s/#AutoEnable=false/AutoEnable=true/g" /etc/bluetooth/main.conf || handle_error "Failed to fix bluetooth"
+cp /etc/bluetooth/main.conf /etc/bluetooth/main.conf.bak || handle_error "Failed to back up Bluetooth configuration."
+sed -i "s/#AutoEnable=true/AutoEnable=true/g" /etc/bluetooth/main.conf || handle_error "Failed to fix bluetooth"
 echo 'load-module module-switch-on-connect' | tee --append /etc/pulse/default.pa || handle_error "Failed to fix bluetooth"
 echo
 echo "#################################"
@@ -86,6 +89,7 @@ echo "#################################"
 echo "Permission of root set to 700"
 echo "#################################"
 chmod -v 700 /root || handle_error "Failed to set root permission."
+echo "Root permissions set to 700" >> "$LOG_FILE"
 
 echo
 echo "#################################"
